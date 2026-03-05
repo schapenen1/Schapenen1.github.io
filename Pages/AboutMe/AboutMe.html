@@ -13,54 +13,61 @@
 
     <!-- Standard code for every page -->
     <div class="text-blocks">
-        <button class="portfolio-button" onclick="window.location.href='../../../index.html';">
-            <h1>
-            Portfolio Lars Gerritsen
-            </h1>
+        <button class="portfolio-button" onclick="window.location.href='../../index.html';">
+            <h1>Portfolio Lars Gerritsen</h1>
         </button>
     </div>
 
-     <select class="select" onchange="window.location.href=this.value">
-        <option value="" selected disabled hidden> 
-            <h2> Projects </h2> 
-        </option>
-        <option value="/Pages/Nightstand/FloatingNightstand.html"> Floating Nightstand</option>
-        <option value="/Pages/BookStand/BookStand.html">Bookstand </option>
-        <option value="/Pages/ChristmasCard/Assets/ChristmasCard.html">ChristmasCard</option>
+    <select class="select" onchange="window.location.href=this.value">
+        <option value="" selected disabled hidden>Projects</option>
+        <optgroup label="Hardware">
+            <option value="../Nightstand/FloatingNightstand.html">Floating Nightstand</option>
+            <option value="../BookStand/BookStand.html">Bookstand</option>
+        </optgroup>
+        <optgroup label="Software">
+            <option value="../ChristmasCard/Assets/ChristmasCard.html">Christmas Card</option>
+        </optgroup>
     </select>
     
     <select class="select" onchange="window.location.href=this.value">
         <option value="" selected disabled hidden>About Me</option>
-        <option value="AboutMe.html">
-            About Me
-        </option>
+        <option value="AboutMe.html">About Me</option>
     </select>
-    <h2> About Me</h2>
-    <div style="display: flex;">
-        <h3 > My name is Lars Gerritsen and am currently in the second year of the bachelor creative technology on the University of Twente. 
-        Creative Technology falls under the domain of EEMCS (Electrical, Engineering, Mathematics & Computer Science) and is a combination between all four directions. 
-        <br><br>
-        <ul style="margin-left: -10px;">My skills are:</ul>
-        <li>Woodworking</li>
-        <li>Programming in processing, dialect of java</li>
-        <li>Programming in HTML</li>
-        <li>Programming in C</li>
-        <li>Making  digital electronic circuits based on the Arduino UNO</li>
-        <li>Making analog electronic  circuits</li>
-        </h3>
-        <img src="Picture Lars Gerritsen.jpg" class="img-lars">
-     </div>
+
+    <h2>About Me</h2>
+    <div style="display: flex; gap: 20px; align-items: flex-start;">
+        <div>
+            <h3>My name is Lars Gerritsen and I am currently in the second year of the bachelor Creative Technology at the University of Twente.</h3>
+            <p>Creative Technology falls under the domain of EEMCS (Electrical Engineering, Mathematics & Computer Science) and combines aspects from all these directions.</p>
+
+            <h4>My skills are:</h4>
+            <ul style="margin-left: -10px;">
+                <li>Woodworking</li>
+                <li>Programming in Processing (Java dialect)</li>
+                <li>HTML</li>
+                <li>C</li>
+                <li>Digital electronic circuits based on microcontrollers:
+                    <ul>
+                        <li>Arduino Uno</li>
+                        <li>ESP32</li>
+                    </ul>
+                </li>
+                <li>Making analog electronic circuits</li>
+            </ul>
+        </div>
+        <img src="Picture Lars Gerritsen.jpg" class="img-lars" alt="Lars Gerritsen">
+    </div>
     <div class="text-blocks">
         <div class="contact">
-            <img src="/LinkedIn Logo.png" class="img-logo">
+            <img src="../../LinkedIn Logo.png" class="img-logo" alt="LinkedIn">
             <a href="https://www.linkedin.com/in/lars-gerritsen-30b841276/" style="color: black; text-decoration: none;">
-             <h2> LinkedIn </h2>
+                <h2>LinkedIn</h2>
             </a>
         </div>
         <div class="contact">
-            <img src="/Mail Logo.png" class="img-logo">
-            <a href= "mailto: lars.gerritsen.lg@gmail.com" style="color: black; text-decoration: none;">
-                <h2> Mail </h2> 
+            <img src="../../Mail Logo.png" class="img-logo" alt="Mail">
+            <a href="mailto:lars.gerritsen.lg@gmail.com" style="color: black; text-decoration: none;">
+                <h2>Mail</h2>
             </a>
         </div>
     </div>

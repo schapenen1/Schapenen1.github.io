@@ -44,18 +44,50 @@
         </button>
     </div>
 
-    <div class="dropdown-container">
-        <select class="select" onchange="window.location.href=this.value">
-            <option value="" selected disabled hidden>Projects</option>
-            <option value="Pages/Nightstand/FloatingNightstand.html">"Floating" nightstand</option>
-            <option value="Pages/BookStand/BookStand.html">Bookstand</option>
-            <option value="Pages/ChristmasCard/Assets/ChristmasCard.html">Christmascard</option>
-        </select>
-        <select class="select" onchange="window.location.href=this.value">
-            <option value="" selected disabled hidden>About Me</option>
-            <option value="Pages/AboutMe/AboutMe.html">About Me </option>
-        </select>
-</div>
+    <div class="custom-select">
+    <div class="selected">Projects</div>
+ <div class="selected">Projects</div>
+    <div class="options">
+        <div class="group-label">Hardware</div>
+            <div class="option" data-value="../Nightstand/FloatingNightstand.html">
+                Floating Nightstand
+            </div>
+            <div class="option" data-value="../BookStand/BookStand.html">
+                Bookstand
+            </div>
+
+            <div class="group-label">Software</div>
+            <div class="option" data-value="../ChristmasCard/Assets/ChristmasCard.html">
+                Christmas Card
+            </div>
+        </div>
+    </div>
+    <script>
+const selected = document.querySelector(".selected");
+const options = document.querySelector(".options");
+
+selected.addEventListener("click", () => {
+    options.style.display =
+        options.style.display === "block" ? "none" : "block";
+});
+
+document.querySelectorAll(".option").forEach(option => {
+    option.addEventListener("click", () => {
+        window.location.href = option.dataset.value;
+    });
+});
+
+// close when clicking outside
+document.addEventListener("click", e => {
+    if (!e.target.closest(".custom-select")) {
+        options.style.display = "none";
+    }
+});
+</script>
+
+
+    
+   
     <div class="slideshow-container">
     <div class="slides">
         <a href="Pages/Nightstand/FloatingNightstand.html">
