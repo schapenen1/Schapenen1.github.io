@@ -1,0 +1,213 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Portfolio Lars Gerritsen</title>
+    <link rel="stylesheet" href="../../style/style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         HEADER
+         ========================= -->
+
+    <div class="text-blocks">
+
+        <!-- Portfolio title -->
+        <button
+            class="portfolio-button"
+            onclick="window.location.href='../../index.html';"
+        >
+            <h1>Portfolio Lars Gerritsen</h1>
+        </button>
+
+
+        <!-- Projects dropdown -->
+        <div class="custom-select">
+
+            <div class="selected">
+                Projects
+            </div>
+
+            <div class="options">
+
+                <div class="group-label">
+                    Hardware
+                </div>
+
+                <div
+                    class="option"
+                    data-value="../Nightstand/FloatingNightstand.html"
+                >
+                    Floating Nightstand
+                </div>
+
+                <div
+                    class="option"
+                    data-value="../BookStand/BookStand.html"
+                >
+                    Bookstand
+                </div>
+
+                <div class="group-label">
+                    Software
+                </div>
+
+                <div
+                    class="option"
+                    data-value="../ChristmasCard/Assets/ChristmasCard.html"
+                >
+                    Christmas Card
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- About Me dropdown -->
+        <div class="custom-select">
+
+            <div class="selected">
+                About Me
+            </div>
+
+            <div class="options">
+
+                <div
+                    class="option"
+                    data-value="../AboutMe/AboutMe.html"
+                >
+                    About Me
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         PAGE CONTENT
+         ========================= -->
+
+    <main class="page-content">
+
+        <!--
+            YOUR CONTENT GOES HERE
+
+            Example:
+
+            <h2>Floating Nightstand</h2>
+
+            <p>
+                Information about the project...
+            </p>
+
+            <img src="..." alt="Floating Nightstand">
+        -->
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+         ========================= -->
+
+    <div class="text-blocks">
+
+        <div class="contact">
+
+            <img
+                src="../../LinkedIn Logo.png"
+                alt="LinkedIn"
+                class="img-logo"
+            >
+
+            <a
+                href="https://www.linkedin.com/in/lars-gerritsen-30b841276/"
+                style="color: black; text-decoration: none;"
+            >
+                <h2>LinkedIn</h2>
+            </a>
+
+        </div>
+
+
+        <div class="contact">
+
+            <img
+                src="../../Mail Logo.png"
+                alt="Mail"
+                class="img-logo"
+            >
+
+            <a
+                href="mailto:lars.gerritsen.lg@gmail.com"
+                style="color: black; text-decoration: none;"
+            >
+                <h2>Mail</h2>
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         DROPDOWN JAVASCRIPT
+         ========================= -->
+
+    <script>
+
+        document.querySelectorAll(".custom-select").forEach(dropdown => {
+
+            const selected = dropdown.querySelector(".selected");
+
+            selected.addEventListener("click", event => {
+
+                event.stopPropagation();
+
+                // Close other dropdowns
+                document.querySelectorAll(".custom-select").forEach(other => {
+
+                    if (other !== dropdown) {
+                        other.classList.remove("open");
+                    }
+
+                });
+
+                // Open/close this dropdown
+                dropdown.classList.toggle("open");
+
+            });
+
+
+            // Navigate when an option is clicked
+            dropdown.querySelectorAll(".option").forEach(option => {
+
+                option.addEventListener("click", () => {
+                    window.location.href = option.dataset.value;
+                });
+
+            });
+
+        });
+
+
+        // Close dropdowns when clicking outside
+        document.addEventListener("click", () => {
+
+            document.querySelectorAll(".custom-select").forEach(dropdown => {
+                dropdown.classList.remove("open");
+            });
+
+        });
+
+    </script>
+
+</body>
+</html>
+```

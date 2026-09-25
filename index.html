@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -36,7 +36,7 @@
     </head>
 
 <body>
-    <div class="text-blocks">
+    <div class="text-blocks" >
         <button class="portfolio-button" onclick="window.location.href='../../../index.html';">
           <h1>
             Portfolio Lars Gerritsen
@@ -45,45 +45,59 @@
     </div>
 
     <div class="custom-select">
-    <div class="selected">Projects</div>
- <div class="selected">Projects</div>
-    <div class="options">
-        <div class="group-label">Hardware</div>
-            <div class="option" data-value="../Nightstand/FloatingNightstand.html">
+        <div class="selected">
+            Projects
+        </div>
+        <div class="options">
+            <div class="group-label"> Hardware </div>
+            <div class="option" data-value="Pages/Nightstand/FloatingNightstand.html">
                 Floating Nightstand
             </div>
-            <div class="option" data-value="../BookStand/BookStand.html">
+            <div class="option" data-value="Pages/BookStand/BookStand.html">
                 Bookstand
             </div>
 
             <div class="group-label">Software</div>
-            <div class="option" data-value="../ChristmasCard/Assets/ChristmasCard.html">
+            <div class="option" data-value="Pages\ChristmasCard\Assets\ChristmasCard.html">
                 Christmas Card
             </div>
         </div>
     </div>
+    <div class="custom-select">
+        <div class="selected">About Me</div>
+            <div class="options">
+            <div class="option" data-value="Pages/AboutMe/AboutMe.html">
+                About Me
+            </div>
+        </div>
+    </div> 
+    
+
     <script>
-const selected = document.querySelector(".selected");
-const options = document.querySelector(".options");
+    document.querySelectorAll(".custom-select").forEach(dropdown => {
+        const selected = dropdown.querySelector(".selected");
+        const options = dropdown.querySelector(".options");
 
-selected.addEventListener("click", () => {
-    options.style.display =
-        options.style.display === "block" ? "none" : "block";
-});
+        selected.addEventListener("click", (e) => {
+            e.stopPropagation();
+            options.style.display =
+                options.style.display === "block" ? "none" : "block";
+        });
 
-document.querySelectorAll(".option").forEach(option => {
-    option.addEventListener("click", () => {
-        window.location.href = option.dataset.value;
+        dropdown.querySelectorAll(".option").forEach(option => {
+            option.addEventListener("click", () => {
+                window.location.href = option.dataset.value;
+            });
+        });
     });
-});
 
-// close when clicking outside
-document.addEventListener("click", e => {
-    if (!e.target.closest(".custom-select")) {
-        options.style.display = "none";
-    }
-});
-</script>
+    // close when clicking outside
+    document.addEventListener("click", () => {
+        document.querySelectorAll(".options").forEach(opt => {
+            opt.style.display = "none";
+        });
+    });
+    </script>
 
 
     
