@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Project M9</title>
+</head>
+
+<body style="background-color: #E6E5DF;" onload="setCoins()">
+    <div style="display: flex; align-items: center; justify-content: space-between;">
+        <h1>Project M9</h1>
+        <h1 id="coins"> Coins: 0 </h1>   
+        <img src="logo-utwente.png" style="height: 100px; margin-right:0px">
+    </div>
+</body>
+
+<style>
+  .container {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 10px; 
+  }
+  
+  .columns {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .box {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+</style>
+
+<script>
+    let currentCoins = 0; // Initialize current coins
+    function upCoins(){
+        currentCoins += coinsExercise;
+        document.getElementById("coins").innerHTML = `Coins: ${currentCoins}`;
+    }
+
+    function setCoins() {
+        const URL = window.location.href;
+        currentCoins = URL.split("?")[1];
+        document.getElementById("coins").innerHTML = `Coins: ${currentCoins}`;
+    }
+</script>
+</html>

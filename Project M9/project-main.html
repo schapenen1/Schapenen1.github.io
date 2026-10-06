@@ -8,6 +8,7 @@
 <body style="background-color: #E6E5DF;">
     <div style="display: flex; align-items: center; justify-content: space-between;">
         <h1>Project M9</h1>
+        <h1 id="coins"> Coins: 0 </h1>        
         <img src="logo-utwente.png" style="height: 100px; margin-right:0px">
     </div>
     <div class = "container">
@@ -50,9 +51,14 @@
 </body>
 
 <script>
+    const answers = ["1", "2", "3", "4"];
+    const coinsExercise = 10; // Number of coins to add for each correct answer
+    let  currentCoins = 0; // Initialize current coins
+    let questionsCorrect = [false, false, false, false]; // Track correctness of each question
+
     function checkAnswers() {
         // Define the correct answers for each question
-        const answers = ["1", "2", "3", "4"];
+        
         let allCorrect = true;
 
         for (let i = 0; i < answers.length; i++) {
@@ -60,23 +66,38 @@
             const answer = document.getElementById(`answer${i + 1}`);
             const question = document.getElementById(`question${i + 1}`);
 
-            if (answer.value !== answers[i]) {
+            if (answer.value == answers[i]) {
+                console.log(`Answer ${i + 1} is correct.`);
+                changeColor(question, 'green');
+                
+                if (!questionsCorrect[i]) {
+                    upCoins();
+                }
+                questionsCorrect[i] = true;
+
+            } else {
                 console.log(`Answer ${i + 1} is incorrect.`);
                 changeColor(question, 'red');
                 allCorrect = false;
-            } else {
-                changeColor(question, 'green');
             }
         }
 
         if (allCorrect) {
             console.log("All answers are correct!");
+            setTimeout(() => {
+            window.location.href = `project-researchplan.html?${currentCoins}`;
+        }, 5000);
         }
     };
 
     function changeColor(element, color) {
         element.style.backgroundColor = color;
     };
+
+    function upCoins(){
+        currentCoins += coinsExercise;
+        document.getElementById("coins").innerHTML = `Coins: ${currentCoins}`;
+    }
 </script>
 
 <style>
