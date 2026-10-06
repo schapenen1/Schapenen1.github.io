@@ -5,11 +5,16 @@
     <title>Project M9</title>
 </head>
 
-<body style="background-color: #E6E5DF;" onload="setCoins()">
-    <div style="display: flex; align-items: center; justify-content: space-between;">
-        <h1>Project M9</h1>
-        <h1 id="coins"> Coins: 0 </h1>   
-        <img src="logo-utwente.png" style="height: 100px; margin-right:0px">
+<body style="background-color: #E6E5DF; margin:0;" onload="setCoins()">
+    <div style="display: flex; align-items: center; justify-content: space-between; margin:0; background-color: red">
+        <h1 style="margin: 10px;">Project M9</h1>
+        <div class="align-items" style="display: flex; align-items: center ;">
+            <div class="coins container" style="height: 100px; padding: 10px; background-color: aqua; ">
+                <h1 id="coins" style="margin-top: 30px;">  0 </h1> 
+                <img src="coin.png" style="height:50px; width:50px; margin-top:25px">
+            </div>  
+            <img src="logo-utwente.png" style="height: 100px; padding: 10px; background-color: green;">
+        </div>
     </div>
 </body>
 
@@ -34,7 +39,9 @@
 </style>
 
 <script>
-    let currentCoins = 0; // Initialize current coins
+    // Initialize current coins
+    let currentCoins = 0; 
+
     function upCoins(){
         currentCoins += coinsExercise;
         document.getElementById("coins").innerHTML = `Coins: ${currentCoins}`;
@@ -43,7 +50,7 @@
     function setCoins() {
         const URL = window.location.href;
         currentCoins = URL.split("?")[1];
-        document.getElementById("coins").innerHTML = `Coins: ${currentCoins}`;
+        document.getElementById("coins").innerHTML = ` ${currentCoins}`;
     }
 </script>
 </html>

@@ -5,13 +5,29 @@
     <title>Project M9</title>
 </head>
 
-<body style="background-color: #E6E5DF;">
-    <div style="display: flex; align-items: center; justify-content: space-between;">
-        <h1>Project M9</h1>
-        <h1 id="coins"> Coins: 0 </h1>        
-        <img src="logo-utwente.png" style="height: 100px; margin-right:0px">
+<body style="background-color: #E6E5DF; margin: 0;" onload="setCoins()">
+
+    <!-- Header with coins and UT logo -->
+    <div style="display: flex; align-items: center; justify-content: space-between; margin:0; background-color: red">
+        <h1 style="margin: 10px;">Project M9</h1>
+
+        <!-- Coins and UT logo container -->
+        <div class="coins-UT-container" style="display: flex; align-items: center ;">
+
+            <!-- Coins container -->
+            <div class="coins-container" style="height: 100px; padding: 10px; background-color: aqua; ">
+                <h1 id="coins" style="margin-top: 30px;">  0 </h1> 
+                <img src="coin.png" style="height:50px; width:50px; margin-top:25px">
+            </div> 
+            
+            <!-- UT logo -->
+            <img src="logo-utwente.png" style="height: 100px; padding: 10px; background-color: green;">
+        </div>
     </div>
+
+    <!-- Questions in a grid -->
     <div class = "container">
+
         <div class="question">
            <h2>Insert picture practice equation 1</h2>
             
@@ -46,54 +62,59 @@
     </div>
 
     <!-- Add a submit button to check the answers -->
-    <input type="submit" value="Submit" onclick="checkAnswers()" style =" font-size: 20px; align-items: center;">
+    <input type="submit" value="Submit" onclick="checkAnswers()" style =" font-size: 50px; ">
     
 </body>
 
 <script>
+    //Define the correct answers and the reward for each correct answer
     const answers = ["1", "2", "3", "4"];
     const coinsExercise = 10; // Number of coins to add for each correct answer
+
+    // Initialize current coins, correctness tracker and boolean for all correct answers
     let  currentCoins = 0; // Initialize current coins
     let questionsCorrect = [false, false, false, false]; // Track correctness of each question
+    let allCorrect = true;
 
     function checkAnswers() {
-        // Define the correct answers for each question
-        
-        let allCorrect = true;
 
-        for (let i = 0; i < answers.length; i++) {
-
+            for (let i = 0; i < answers.length; i++) {
+            
+            // Collect the answer and question elements for each question
             const answer = document.getElementById(`answer${i + 1}`);
             const question = document.getElementById(`question${i + 1}`);
 
+            //Check if the answer is correct
             if (answer.value == answers[i]) {
-                console.log(`Answer ${i + 1} is correct.`);
-                changeColor(question, 'green');
+                changeColor(question, 'green'); 
                 
+                // Only update once when the answer is marked as correct
                 if (!questionsCorrect[i]) {
                     upCoins();
                 }
                 questionsCorrect[i] = true;
 
             } else {
-                console.log(`Answer ${i + 1} is incorrect.`);
                 changeColor(question, 'red');
+                document.getElementById(`answer${i + 1}`).value = "";
                 allCorrect = false;
             }
         }
 
+        // Go to the next page if all answers are correct, after a 3 second delay with the current coins in the URL
         if (allCorrect) {
-            console.log("All answers are correct!");
             setTimeout(() => {
             window.location.href = `project-researchplan.html?${currentCoins}`;
-        }, 5000);
+            }, 3000);
         }
     };
 
+    //Function that changes color of the question box
     function changeColor(element, color) {
         element.style.backgroundColor = color;
     };
 
+    //Function that updates the coin count and displays it
     function upCoins(){
         currentCoins += coinsExercise;
         document.getElementById("coins").innerHTML = `Coins: ${currentCoins}`;
@@ -117,6 +138,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 50px;
   }
 </style>
 </html>
