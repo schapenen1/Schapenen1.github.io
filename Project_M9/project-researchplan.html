@@ -9,8 +9,8 @@
     <div style="display: flex; align-items: center; justify-content: space-between; margin:0; background-color: red">
         <h1 style="margin: 10px;">Project M9</h1>
         <div class="align-items" style="display: flex; align-items: center ;">
-            <div class="coins container" style="height: 100px; padding: 10px; background-color: aqua; ">
-                <h1 id="coins" style="margin-top: 30px;">  0 </h1> 
+            <div class="coins-container" style="height: 100px; padding: 10px; display: flex; background-color: aqua; ">
+                <h1 id="coins" style="margin-top: 35px; margin-right: 20px; margin-left: 20px;">  0 </h1> 
                 <img src="coin.png" style="height:50px; width:50px; margin-top:25px">
             </div>  
             <img src="logo-utwente.png" style="height: 100px; padding: 10px; background-color: green;">
@@ -44,7 +44,7 @@
 
     function upCoins(){
         currentCoins += coinsExercise;
-        document.getElementById("coins").innerHTML = `Coins: ${currentCoins}`;
+        document.getElementById("coins").innerHTML = ` ${currentCoins}`;
     }
 
     function setCoins() {

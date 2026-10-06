@@ -9,14 +9,14 @@
 
     <!-- Header with coins and UT logo -->
     <div style="display: flex; align-items: center; justify-content: space-between; margin:0; background-color: red">
-        <h1 style="margin: 10px;">Project M9</h1>
+        <h1 style="margin: 10px; ">Project M9</h1>
 
         <!-- Coins and UT logo container -->
         <div class="coins-UT-container" style="display: flex; align-items: center ;">
 
             <!-- Coins container -->
-            <div class="coins-container" style="height: 100px; padding: 10px; background-color: aqua; ">
-                <h1 id="coins" style="margin-top: 30px;">  0 </h1> 
+            <div class="coins-container" style="height: 100px; padding: 10px; display:flex; background-color: aqua; ">
+                <h1 id="coins" style="margin-top: 35px; margin-right: 20px; margin-left: 20px;">  0 </h1> 
                 <img src="coin.png" style="height:50px; width:50px; margin-top:25px">
             </div> 
             
@@ -117,7 +117,7 @@
     //Function that updates the coin count and displays it
     function upCoins(){
         currentCoins += coinsExercise;
-        document.getElementById("coins").innerHTML = `Coins: ${currentCoins}`;
+        document.getElementById("coins").innerHTML = `${currentCoins}`;
     }
 </script>
 
@@ -144,6 +144,9 @@
     width: 100%;
     padding: 10px;
     font-size: 50px;
+  }
+  h2 {
+    margin-left:10px;
   }
 </style>
 </html>
