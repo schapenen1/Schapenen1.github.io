@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Project M9</title>
+</head>
+
+<body style="background-color: #E6E5DF;">
+    <div style="display: flex; align-items: center; justify-content: space-between;">
+        <h1>Project M9</h1>
+        <img src="logo-utwente.png" style="height: 100px; margin-right:0px">
+    </div>
+    <div class = "container">
+        <div class="question">
+           <h2>Insert picture practice equation 1</h2>
+            
+            <div class="box" id = "question1">
+                <input type="text" id="answer1" placeholder="Answer calculations here">
+            </div>
+        </div>
+
+        <div class="question">
+            <h2>Insert picture practice equation 2</h2>
+            
+            <div class="box" id = "question2">
+                <input type="text" id="answer2" placeholder="Answer calculations here">
+            </div>
+        </div>
+
+        <div class="question">
+            <h2>Insert picture practice equation 3</h2>
+            
+            <div class="box" id = "question3">
+                <input type="text" id="answer3" placeholder="Answer calculations here">
+            </div>
+        </div>
+
+        <div class="question">
+                <h2>Insert picture practice equation 4</h2>
+            
+            <div class="box" id = "question4">
+                <input type="text" id="answer4" placeholder="Answer calculations here">
+            </div>
+        </div>
+    </div>
+
+    <!-- Add a submit button to check the answers -->
+    <input type="submit" value="Submit" onclick="checkAnswers()" style =" font-size: 20px; align-items: center;">
+    
+</body>
+
+<script>
+    function checkAnswers() {
+        // Define the correct answers for each question
+        const answers = ["1", "2", "3", "4"];
+        let allCorrect = true;
+
+        for (let i = 0; i < answers.length; i++) {
+
+            const answer = document.getElementById(`answer${i + 1}`);
+            const question = document.getElementById(`question${i + 1}`);
+
+            if (answer.value !== answers[i]) {
+                console.log(`Answer ${i + 1} is incorrect.`);
+                changeColor(question, 'red');
+                allCorrect = false;
+            } else {
+                changeColor(question, 'green');
+            }
+        }
+
+        if (allCorrect) {
+            console.log("All answers are correct!");
+        }
+    };
+
+    function changeColor(element, color) {
+        element.style.backgroundColor = color;
+    };
+</script>
+
+<style>
+  .container {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 10px; 
+  }
+  
+  .columns {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .box {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+</style>
+</html>
