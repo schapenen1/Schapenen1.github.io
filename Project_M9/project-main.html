@@ -5,7 +5,7 @@
     <title>Project M9</title>
 </head>
 
-<body style="background-color: #E6E5DF; margin: 0;" onload="setCoins()">
+<body style="background-color: #E6E5DF; margin: 0;">
 
     <!-- Header with coins and UT logo -->
     <div style="display: flex; align-items: center; justify-content: space-between; margin:0; background-color: red">
@@ -62,8 +62,9 @@
     </div>
 
     <!-- Add a submit button to check the answers -->
-    <input type="submit" value="Submit" onclick="checkAnswers()" style =" font-size: 50px; ">
-    
+    <div style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+        <input type="submit" value="Submit" onclick="checkAnswers()" style =" font-size: 50px; justify-content: center; align-items: center; display: flex; ">
+    </div>
 </body>
 
 <script>
@@ -78,7 +79,7 @@
 
     function checkAnswers() {
 
-            for (let i = 0; i < answers.length; i++) {
+        for (let i = 0; i < answers.length; i++) {
             
             // Collect the answer and question elements for each question
             const answer = document.getElementById(`answer${i + 1}`);
@@ -100,7 +101,10 @@
                 allCorrect = false;
             }
         }
+        moveToNextPage();   
+    };
 
+    function moveToNextPage() {
         // Go to the next page if all answers are correct, after a 3 second delay with the current coins in the URL
         if (allCorrect) {
             setTimeout(() => {
@@ -124,7 +128,7 @@
 <style>
   .container {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
     gap: 10px; 
   }
   
