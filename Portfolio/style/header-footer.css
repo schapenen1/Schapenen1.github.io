@@ -1,13 +1,4 @@
-
-html,
-body {
-    margin: 0;
-    padding: 0;
-    background-color: rgb(240, 240, 240);
-}
-
-/* Used on every page */
-
+/* Navigation buttons */
 .text-blocks {
     background-color: rgb(135, 213, 222);
     text-align: center;
@@ -19,6 +10,10 @@ body {
     border: none;
     margin: 0;
     padding: 0;
+}
+
+.text-blocks:first-child{
+    border-bottom: 2px solid rgb(180, 230, 235);
 }
 
 .portfolio-button {
@@ -44,9 +39,9 @@ body {
 }
 
 .selected {
+    position: relative;
     background-color: rgb(165, 224, 230);
     border: none;
-    border-top: 2px black solid;
     border-radius: 0;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
@@ -98,23 +93,15 @@ body {
     cursor: default;
     opacity: 0.6;
 }
-
-/* Individual options */
-
 .option {
     padding: 12px 16px;
     text-align: center;
     cursor: pointer;
 }
 
+/* Individual options */
 .option:hover {
     background-color: rgba(0, 0, 0, 0.08);
-}
-
-h1 {
-    font-size: 550%;
-    margin: 0;
-    font-family: "Baskerville Old Face", serif;
 }
 
 option {
@@ -145,6 +132,12 @@ select {
     display: flex;
 }
 
+.img-logo {
+    width: auto;
+    height: 50px;
+    margin: 20px;
+}
+
 .contact {
     padding-left: 100px;
     padding-right: 100px;
@@ -154,131 +147,3 @@ select {
 .contact:hover {
     cursor: pointer;
 }
-
-.img-logo {
-    width: auto;
-    height: 50px;
-    margin: 20px;
-}
-
-
-/* Used only on main page */
-
-.slideshow-container {
-    position: relative;
-    max-width: 75%;
-    margin: 20px auto;
-    border-radius: 10px;
-    border-color: black;
-    background-color: rgb(240, 240, 240);
-    padding-top: 0;
-    padding-bottom: 20px;
-    height: 45%;
-    gap: 33%;
-}
-
-.slides {
-    display: none;
-}
-
-.img-slides {
-    width: 100%;
-    max-height: 70vh;
-    object-fit: cover;
-    border-radius: 10px;
-    border: 5px solid black;
-}
-
-.img-slides:hover {
-    cursor: pointer;
-}
-
-.caption {
-    position: absolute;
-    bottom: 50%;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-    padding: 10px 20px;
-    font-size: 200%;
-    border-radius: 5px;
-}
-
-
-/* Tekst on side pages */
-
-h2 {
-    text-align: center;
-    font-size: 200%;
-}
-
-h3 {
-    padding-left: 50px;
-    padding-right: 50px;
-}
-
-
-/* About Me page */
-
-.img-lars {
-    display: flex;
-    height: 300px;
-    width: 300px;
-    padding: 20px;
-}
-
-
-/* Bookstand page */
-
-.img-bookstand {
-    display: flex;
-}
-
-.img-bookstand img {
-    height: 500px;
-    width: auto;
-    border: 5px solid rgba(0, 0, 0);
-    gap: 0;
-}
-
-.img-nightstand {
-    display: flex;
-}
-
-.img-nightstand img {
-    height: 500px;
-    width: 750px;
-    border: 5px solid rgba(0, 0, 0);
-    margin: 20px;
-    gap: 0;
-}
-
-
-/* Christmas Card page */
-
-canvas {
-    border: 2px solid #333;
-}
-
-#canvas-container {
-    position: relative;
-    margin-top: -4%;
-    transform: scale(0.94);
-    transform-origin: top left;
-}
-
-figure {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 20px;
-}
-
-figcaption {
-    font-size: 16px;
-    color: #333;
-    text-align: center;
-    margin-top: 10px;
-}
-

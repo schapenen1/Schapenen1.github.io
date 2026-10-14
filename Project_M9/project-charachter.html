@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Project M9</title>
+</head>
+
+<body style="background-color: #E6E5DF; margin:0;" onload="unlockStart(),setCoins()">
+    <div style="display: flex; align-items: center; justify-content: space-between; margin:0; background-color: red">
+        <h1 style="margin: 10px;">Project M9</h1>
+        <div class="align-items" style="display: flex; align-items: center ;">
+            <div class="coins-container" style="height: 100px; padding: 10px; display: flex; background-color: aqua; ">
+                <h1 id="coins" style="margin-top: 35px; margin-right: 20px; margin-left: 20px;">  0 </h1> 
+                <img src="coin.png" style="height:50px; width:50px; margin-top:25px">
+            </div>  
+            <img src="logo-utwente.png" style="height: 100px; padding: 10px; background-color: green;">
+        </div>
+    </div>
+
+    <div class=" charachterColumn">
+        <img src = coin.png>
+        <img src = coin.png>
+        <img src = face.svg>
+        <img src = coin.png>
+        <img src = "pants.png">
+        <img src = "shoes.png">
+    </div>
+
+    <button onclick="showSelection(0)"> Hat</button>
+    <button onclick="showSelection(1)"> Hair</button>
+    <button> Face </button>
+    <button onclick="showSelection(2)"> Shirt </button>
+    <button onclick="showSelection(3)"> Pants </button>
+    <button onclick="showSelection(4)"> Shoes </button>
+    <div id="selection" class="container"></div>
+</body>
+
+<style>
+    .charachterColumn {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .charachterColumn img {
+    max-width: 200px;
+    max-height: 200px;
+    object-fit: contain;
+    }
+
+   .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+    gap: 10px; 
+  }
+  
+  .columns {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .box {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 50px;
+  }
+  h2 {
+    margin-left:10px;
+  }
+
+  .item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    }
+
+    .item:hover {
+        background-color: #E0E0E0;
+    }
+
+    
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 7.5vw);
+    grid-template-rows: repeat(4, 7.5vw);
+    column-gap: 10px;
+    row-gap: 10px;
+    padding: 10px;
+    justify-content: start;
+    align-content: start;
+}
+
+.item {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    margin: 0;
+    background-color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.item img {
+    width: 70%;
+    height: 70%;
+    object-fit: contain;
+}
+
+    </style>
+
+<script>
+    // Initialize current coins
+    let currentCoins = 0; 
+    let categoryCount = 5
+    let row = 4
+    let col = 4
+
+    const itemPrice = [
+                         [
+                            [10,10,10,10],
+                            [10,10,10,10],
+                            [10,10,10,10],
+                            [10,10,10,10]
+                        ],[
+                            [10,10,10,10],
+                            [10,10,10,10],
+                            [10,10,10,10],
+                            [10,10,10,10]
+                        ],[
+                            [10,10,10,10],
+                            [10,10,10,10],
+                            [10,10,10,10],
+                            [10,10,10,10]
+                        ],[
+                            [10,10,10,10],
+                            [10,10,10,10],
+                            [10,10,10,10],
+                            [10,10,10,10]
+                        ],[
+                            [10,10,10,10],
+                            [10,10,10,10],
+                            [10,10,10,10],
+                            [10,10,10,1000]
+                        ]
+                    ];
+
+    let itemStates = Array.from(
+        { length: categoryCount },
+        () => Array.from(
+            { length: row },
+            () => Array(col).fill(false)
+        )
+    );
+
+    function upCoins(){
+        currentCoins += coinsExercise;
+        document.getElementById("coins").innerHTML = ` ${currentCoins}`;
+    }
+
+    function setCoins() {
+        const URL = window.location.href;
+        params = URL.split("?")[1];
+
+        currentCoins = params ? Number(params) : 0;
+
+        document.getElementById("coins").innerHTML = ` ${currentCoins}`;
+    }
+
+    function moveToNextPage() {
+        // Go to the next page if all answers are correct, after a 3 second delay with the current coins in the URL
+        if (allCorrect) {
+            setTimeout(() => {
+            window.location.href = `project-researchplan.html?${currentCoins}`;
+            }, 3000);
+        }
+    }
+
+    function showSelection(type) {
+        const selection = document.getElementById("selection");
+        selection.innerHTML = "";
+
+        for (let i = 0; i < row; i++) {
+            for (let j = 0; j < col; j++) {
+
+                const item = document.createElement("div");
+                item.className = "item";
+
+                item.innerHTML = `
+                    <img src="items/${type}-${i}-${j}.png"
+                        alt="Clothing item"
+                        style="width:100px; height:100px; object-fit:contain;">
+
+                    <p>
+                        ${itemStates[type][i][j]
+                            ? "Unlocked"
+                            : itemPrice[type][i][j] + " coins"}
+                    </p>
+                `;
+
+                item.onclick = function () {
+                    if (itemStates[type][i][j]) {
+                        // Select or equip the unlocked item
+                        console.log("Selected item:", type, i, j);
+                    } else {
+                        buyItem(type, i, j);
+                        showSelection(type);
+                    }
+                };
+
+                selection.appendChild(item);
+            }
+        }
+    }
+
+    function unlockItem (category, col, row) {
+        itemStates[category][col][row] = true;
+    }
+
+    function buyItem (category, col, row) {
+        if(!itemStates[category][col][row]) {
+            price = itemPrice[category][col][row]
+            if (currentCoins >= price) {
+                downCoins(price);
+                unlockItem(category,col,row);
+            }
+        } 
+    }
+    
+    function unlockStart () {
+        // creation empty states of owned clothing
+        
+        for(let i = 0; i < categoryCount; i++ ) {
+            for (let j =0; j < col; j++){
+                unlockItem(i,0,j);
+            }
+        }
+        console.log(itemStates);
+    }
+
+    function downCoins (price) {
+        currentCoins -= price;
+        document.getElementById("coins").innerHTML = ` ${currentCoins}`;
+    }
+   
+</script>
+</html>

@@ -16,10 +16,8 @@
             <img src="logo-utwente.png" style="height: 100px; padding: 10px; background-color: green;">
         </div>
     </div>
-
-    
+   
     <!-- Pros & Cons-->
-     <!--
     <div class = "container">
         <div class="box">
             <input type = "text" id="pro1" placeholder="Pro 1">
@@ -39,7 +37,7 @@
         <div class="box">
             <input type = "text" id="con3" placeholder="Con 3">
         </div>
-    </div> -->
+    </div> 
 </body>
 
 <style>
@@ -74,6 +72,7 @@
 <script>
     // Initialize current coins
     let currentCoins = 0; 
+    let charachter = [,,,,,] // [hat, hair, color, shirt, pants, shoes]
 
     function upCoins(){
         currentCoins += coinsExercise;
@@ -93,6 +92,10 @@
             window.location.href = `project-researchplan.html?${currentCoins}`;
             }, 3000);
         }
-    };
+    }
+
+    function changeClothing (type) {
+        type = document.getElementById(type)
+    }
 </script>
 </html>

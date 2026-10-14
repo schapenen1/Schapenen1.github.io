@@ -1,0 +1,90 @@
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(240, 240, 240);
+    overflow: hidden;
+}
+
+h1 {
+    font-size: 550%;
+    margin: 0;
+    font-family: "Baskerville Old Face", serif;
+}
+
+/* Tekst on side pages */
+
+h2 {
+    text-align: center;
+    font-size: 200%;
+}
+
+h3 {
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+
+/* About Me page */
+
+.img-lars {
+    display: flex;
+    height: 300px;
+    width: 300px;
+    padding: 20px;
+}
+
+/* Bookstand page */
+
+.img-bookstand {
+    display: flex;
+}
+
+.img-bookstand img {
+    height: 500px;
+    width: auto;
+    border: 5px solid rgba(0, 0, 0);
+    gap: 0;
+}
+
+.img-nightstand {
+    display: flex;
+}
+
+.img-nightstand img {
+    height: 500px;
+    width: 750px;
+    border: 5px solid rgba(0, 0, 0);
+    margin: 20px;
+    gap: 0;
+}
+
+
+/* Christmas Card page */
+
+canvas {
+    border: 2px solid #333;
+}
+
+#canvas-container {
+    position: relative;
+    margin-top: -4%;
+    transform: scale(0.94);
+    transform-origin: top left;
+}
+
+figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+
+figcaption {
+    font-size: 16px;
+    color: #333;
+    text-align: center;
+    margin-top: 10px;
+}
+
