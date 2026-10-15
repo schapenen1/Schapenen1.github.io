@@ -1,0 +1,11 @@
+canvas {
+    border: 5px solid black;
+}
+
+
+#canvas-container canvas {
+    box-sizing: border-box;
+    max-height: 425px;
+    max-width: 265px;
+    margin: 10px;
+}

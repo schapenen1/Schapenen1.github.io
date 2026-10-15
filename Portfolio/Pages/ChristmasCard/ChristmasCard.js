@@ -10,10 +10,10 @@ let jingleLyrics = [];
 
 function preload() {
   for (let i = 0; i < 8; i++) {
-    fireImages[i] = loadImage('Assets/Fire ' + (i + 1) + '.png');
+    fireImages[i] = loadImage('Assets_ChristmasCard.js/Fire ' + (i + 1) + '.png');
   }
-  matchImage = loadImage('Assets/Fire 1.png');
-  jingleLyrics = loadStrings('Assets/Jingle Bells.txt');
+  matchImage = loadImage('Assets_ChristmasCard.js/Fire 1.png');
+  jingleLyrics = loadStrings('Assets_ChristmasCard.js/Jingle Bells.txt');
 }
 
 function setup() {

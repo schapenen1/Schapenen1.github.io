@@ -37,7 +37,7 @@ function loadHeader() {
                 <div class="group-label"> Software </div>
 
                 <div class="option"
-                    data-value='${new URL("Pages/ChristmasCard/Assets/ChristmasCard.html", portfolioRoot).href}'>
+                    data-value='${new URL("Pages/ChristmasCard/ChristmasCard.html", portfolioRoot).href}'>
                     Christmas Card
                 </div>
 
