@@ -1,0 +1,14 @@
+.img-lars {
+    display: flex;
+    height: 300px;
+    width: 300px;
+    padding: 20px;
+}
+
+.text-container {
+    display: flex;
+}
+
+ul {
+    margin: 20px;
+}

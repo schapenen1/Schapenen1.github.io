@@ -25,14 +25,9 @@ h3 {
     padding-right: 50px;
 }
 
-
-/* About Me page */
-
-.img-lars {
-    display: flex;
-    height: 300px;
-    width: 300px;
-    padding: 20px;
+h4 {
+    padding-left: 50px;
+    padding-right: 50px;
 }
 
 /* Bookstand page */
