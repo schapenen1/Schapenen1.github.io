@@ -4,43 +4,21 @@
     <meta charset="UTF-8">
     <title>Portfolio Lars Gerritsen/BookStand</title>
 
-    <!-- Correct place for your CSS link -->
-    <link rel="stylesheet" href="../../style/style.css">
+    <!-- Loading general stylesheet-->
+        <link rel="stylesheet" href="../../style/general.css">
 
-    <style>
-        h2{
-          margin:0;  
-          
-        }
-       
-    </style>
+        <!-- Loading the Script that makes the header and footer-->
+        <script src="../../Header-Footer/load_Header-Footer.js"> </script> 
+
+        <!-- Load the page specific JS & CSS-->
+        <link rel="stylesheet" href="../../style/BookStand.css">
 </head>
 
 <body>
-      <div class="text-blocks">
-        <button class="portfolio-button" onclick="window.location.href='../../../index.html';">
-          <h1>
-            Portfolio Lars Gerritsen
-          </h1>
-        </button>
-    </div>
+    <div id="header"></div>
 
-    <select class="select" onchange="window.location.href=this.value">
-        <option value="" selected disabled hidden>Projects</option>
-        <optgroup label="Hardware">
-            <option value="../Nightstand/FloatingNightstand.html">Floating Nightstand</option>
-            <option value="../BookStand/BookStand.html">Bookstand</option>
-        </optgroup>
-        <optgroup label="Software">
-            <option value="../ChristmasCard/Assets/ChristmasCard.html">Christmas Card</option>
-        </optgroup>
-    </select>
-    
-    <select class="select" onchange="window.location.href=this.value">
-        <option value="" selected disabled hidden>About Me</option>
-        <option value="AboutMe.html">About Me</option>
-    </select>
     <h2> BookStand</h2>
+    
     <div style = "display: flex;">
       <h3 > This bookstand was made based on a design from Pinterest.
         I found it an interesting design and therefore chose to make it myself, however there was a big isssue with the bottom of the design. 
@@ -58,39 +36,27 @@
 
       <div class="img-bookstand">
         <figure>
-          <img src="Inspiration.jpg">
+          <img src="images/Inspiration.jpg">
           <figcaption> 
               <a href="https://nl.pinterest.com/pin/690247080411173208/feedback/?invite_code=63bddf35215e4613af08734ae5720ce9&sender_id=690247217797356582">
                 This design 
               </a> 
               from Pinterest functioned as the inspiration of all the iterations.
             </figcaption>
-          </figure>
-            <figure>
-              <img src="Bookstand First version.jpg" alt="Bookstand with triangular base">
+        </figure>
+
+        <figure>
+            <img src="images/Bookstand First version.jpg" alt="Bookstand with triangular base">
           <figcaption>  First iteration of the bookstand, in this version it has a triangular base.</figcaption>
         </figure>
+
         <figure>
-          <img src="Bookstand Final version.jpg" alt="Bookstand with straight base">
+          <img src="images/Bookstand Final version.jpg" alt="Bookstand with straight base">
           <figcaption> Second iteration of the bookstand, in this version it has a straight base.</figcaption>
-      </figure>
+        </figure>
+      </div>
     </div>
-  </div>
-    <div class="text-blocks">
-      <div class="contact">
-          <img src="/LinkedIn Logo.png" class="img-logo">
-          <h2 style="margin-top: 10px;">
-            <a href="https://www.linkedin.com/in/lars-gerritsen-30b841276/" style="color: black; text-decoration: none;">
-              LinkedIn
-            </a>
-          </h2>
-      </div>
-      <div class="contact"></div>
-          <img src="/Mail Logo.png" class="img-logo">
-             <a href= "mailto: lars.gerritsen.lg@gmail.com" style="color: black; text-decoration: none;">
-          <h2> Mail </h2> 
-          </a>
-      </div>
-  </div>
+    
+    <div id="footer" ></div> 
 </body>
 </html>

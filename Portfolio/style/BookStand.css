@@ -1,0 +1,16 @@
+.img-bookstand {
+    display: flex;
+}
+
+.img-bookstand img {
+    height: 325px;
+    width: auto;
+    border: 5px solid rgba(0, 0, 0);
+    gap: 0;
+}
+
+.img-nightstand {
+    display: flex;
+}
+
+
