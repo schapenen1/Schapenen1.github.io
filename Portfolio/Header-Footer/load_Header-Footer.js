@@ -12,7 +12,7 @@ function loadHeader() {
     document.getElementById("header").innerHTML = `
         <div class="text-blocks">
             <button class="portfolio-button"
-                onclick="window.location.href='${new URL("Pages/Home/index.html", portfolioRoot).href}'">
+                onclick="window.location.href='${new URL("Pages/Home/Home.html", portfolioRoot).href}'">
                 <h1>Portfolio Lars Gerritsen</h1>
             </button>
         </div>
