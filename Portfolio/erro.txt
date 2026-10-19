@@ -1,5 +1,0 @@
-Bookstand%20Final%20version.jpg:1  Failed to load resource: the server responded with a status of 404 ()
-Floating%20nightstand.jpg:1  Failed to load resource: the server responded with a status of 404 ()
-ChristmasCard.png:1  Failed to load resource: the server responded with a status of 404 ()
-LinkedIn%20Logo.png:1  Failed to load resource: the server responded with a status of 404 ()
-Mail%20Logo.png:1  Failed to load resource: the server responded with a status of 404 ()
