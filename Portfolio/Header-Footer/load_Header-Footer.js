@@ -5,7 +5,7 @@
     ).src;
     
 const portfolioRoot = new URL("../", scriptURL);
-const imagefolder = new URL ("images/", scriptURL).href;
+const imagefolder = new URL ("Images/", scriptURL).href;
 
 
 function loadHeader() {
@@ -63,14 +63,14 @@ function loadFooter () {
         <div class="text-blocks">
 
             <div class="contact">
-                <img src="${imagefolder}/Images/LinkedIn Logo.png" class="img-logo">
+                <img src="${imagefolder}LinkedIn Logo.png" class="img-logo">
                 <a href="https://www.linkedin.com/in/lars-gerritsen-30b841276/" style="color: black; text-decoration: none;" >
                 <h2> LinkedIn </h2>
                 </a>
             </div>
             
             <div class="contact">
-                <img src="${imagefolder}/Images/Mail Logo.png" class="img-logo">
+                <img src="${imagefolder}Mail Logo.png" class="img-logo">
                 <a href= "mailto: lars.gerritsen.lg@gmail.com" style="color: black; text-decoration: none;">
                 <h2> Mail </h2> 
                 </a>
